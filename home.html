@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white py-6 shadow-lg">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center px-6">
+            <h1 class="text-3xl font-bold">Product Store</h1>
+            <div class="space-x-4 hidden md:flex">
+                <a href="cart.html" class="bg-white text-blue-600 px-6 py-2 rounded-full text-lg">View Cart</a>
+                <a href="logout.html" class="bg-white text-blue-600 px-6 py-2 rounded-full text-lg">Logout</a>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="mobileMenuButton" class="bg-white text-blue-600 px-4 py-2 rounded-full">
+                    Menu
+                </button>
+            </div>
+        </div>
+    
+        <!-- Mobile menu dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 py-4 space-y-4 bg-blue-600 text-white">
+            <a href="cart.html" class="block text-lg">View Cart</a>
+            <a href="logout.html" class="block text-lg">Logout</a>
+        </div>
+    </header>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+    
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+    <main class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.BJ_wtZrcPLtvQ4m9cnLDHQHaIf&pid=Api&P=0&h=220" alt="Product 1" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 1</h2>
+            <p class="text-gray-600 mb-2">Description of Product 1</p>
+            <p class="font-bold mb-4">$100</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.4TeBOdEfMtTXUOY0C9BmWwHaHa&pid=Api&P=0&h=220" alt="Product 2" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 2</h2>
+            <p class="text-gray-600 mb-2">Description of Product 2</p>
+            <p class="font-bold mb-4">$1000</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.Y6izoWlHTvvizmhfyMBeHwHaKD&pid=Api&P=0&h=220" alt="Product 3" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 3</h2>
+            <p class="text-gray-600 mb-2">Description of Product 3</p>
+            <p class="font-bold mb-4">$200</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.yuTKEycj3w6Xve4bAF195AHaHa&pid=Api&P=0&h=220" alt="Product 4" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 4</h2>
+            <p class="text-gray-600 mb-2">Description of Product 4</p>
+            <p class="font-bold mb-4">$400</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse2.mm.bing.net/th?id=OIP._yn5gmW79EDBm7w4ny8WNwHaHa&pid=Api&P=0&h=220" alt="Product 5" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 5</h2>
+            <p class="text-gray-600 mb-2">Description of Product 5</p>
+            <p class="font-bold mb-4">$500</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.OMGAyRyal7tYHQz_b_RptAHaI-&pid=Api&P=0&h=220" alt="Product 6" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 6</h2>
+            <p class="text-gray-600 mb-2">Description of Product 6</p>
+            <p class="font-bold mb-4">$909</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div> <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.HAPRm8rZgTfb4UdUDMleWgHaJQ&pid=Api&P=0&h=220" alt="Product 7" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 7</h2>
+            <p class="text-gray-600 mb-2">Description of Product 7</p>
+            <p class="font-bold mb-4">$1000</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div> <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.boDdE3du_NPgJ2cKIDIIMgHaLH&pid=Api&P=0&h=220" alt="Product 8" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 8</h2>
+            <p class="text-gray-600 mb-2">Description of Product 8</p>
+            <p class="font-bold mb-4">$60</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div> <div class="bg-white p-4 rounded shadow-md">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.WgcDMc3EYfEstwD2aM4rGwHaHa&pid=Api&P=0&h=220" alt="Product 9" class="w-full h-48 object-cover mb-4">
+            <h2 class="text-xl font-bold">Product 9</h2>
+            <p class="text-gray-600 mb-2">Description of Product 9</p>
+            <p class="font-bold mb-4">$80</p>
+            <button class="addToCart bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        </div>
+    </main>
+</body>
+<script>
+if (!localStorage.getItem('loggedInUser')) {
+    window.location.href = 'login.html';
+}
+
+document.querySelectorAll('.addToCart').forEach(button => {
+    button.addEventListener('click', event => {
+        const productName = event.target.parentElement.querySelector('h2').innerText;
+        const productPrice = parseFloat(
+            event.target.parentElement.querySelector("p.font-bold").innerText.replace("$", "")
+        ); 
+
+        if (!isNaN(productPrice)) { // Check for valid price
+            const product = { name: productName, price: productPrice }; 
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} added to cart!`);
+        } else {
+            alert('Invalid product price');
+        }
+    });
+});
+
+
+</script>
+</html>

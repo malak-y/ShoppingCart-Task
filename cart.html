@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .cart-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cart-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .checkout-btn {
+            transition: background-color 0.3s ease;
+        }
+        .checkout-btn:hover {
+            background-color: #38b2ac;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-blue-600 text-white py-6 text-center shadow-md">
+        <h1 class="text-4xl font-bold">Your Shopping Cart</h1>
+        <a href="home.html" class="bg-white text-blue-600 px-6 py-3 rounded-full mt-4 inline-block text-lg shadow-md hover:bg-blue-100">Back to Home</a>
+    </header>
+
+    <main class="p-8">
+        <div id="cartContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <div id="cartSummary" class="mt-8 text-right">
+        </div>
+    </main>
+
+    <script>
+        const cartContainer = document.getElementById('cartContainer');
+        const cartSummary = document.getElementById('cartSummary');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p class="text-center text-gray-600 text-xl">Your cart is empty.</p>';
+        } else {
+            let total = 0;
+
+            cart.forEach((product, index) => {
+                const price = parseFloat(product.price);
+                total += price;
+
+                const cartItem = `
+                    <div class="cart-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <h2 class="text-2xl font-semibold mb-2">${product.name}</h2>
+                        <p class="text-gray-700 mb-4">Price: $${price.toFixed(2)}</p>
+                        <button class="removeItem bg-red-500 text-white py-2 px-4 rounded-full mt-4 hover:bg-red-600 transition" data-index="${index}">
+                            Remove
+                        </button>
+                    </div>
+                `;
+
+                cartContainer.innerHTML += cartItem;
+            });
+
+            cartSummary.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-md max-w-xs mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4">Total: $${total.toFixed(2)}</h2>
+                    <button class="checkout-btn bg-green-500 text-white py-3 px-8 rounded-full shadow-md text-xl hover:bg-green-600 transition" onclick="checkout()">
+                        Checkout
+                    </button>
+                </div>
+            `;
+
+            document.querySelectorAll('.removeItem').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.dataset.index;
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload();
+                });
+            });
+        }
+        function checkout() {
+            alert('Thank you for your purchase!');
+            localStorage.removeItem('cart');
+            window.location.reload();
+        }
+    </script>
+
+</body>
+</html>
